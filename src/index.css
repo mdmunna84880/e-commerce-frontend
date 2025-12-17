@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* 🔵 Primary (Brand Identity) 
+     Used for: Header navigation, primary buttons, branding elements.
+     Why: Blue instills trust and security in payment processing. */
+  --color-primary: #0F172A; /* Slate 900 - Professional, Deep */
+  --color-primary-foreground: #FFFFFF;
+  
+  /* 🟠 Accent (Conversion/CTA)
+     Used for: "Add to Cart", "Buy Now", Discount badges.
+     Why: Orange/Amber creates urgency and stands out against the primary blue. */
+  --color-accent: #F97316; /* Orange 500 */
+  --color-accent-hover: #EA580C; /* Orange 600 */
+  --color-accent-foreground: #FFFFFF;
+
+  /* ⚪ Backgrounds & Surfaces 
+     Used for: Page background, Cards, Modals.
+     Why: "Card" distinguishes product containers from the main page background. */
+  --color-background: #F8FAFC; /* Slate 50 - Very subtle grey to reduce eye strain */
+  --color-card: #FFFFFF; /* Pure White - For Product Cards so images blend in */
+  --color-card-foreground: #020617;
+
+  /* 📝 Typography (Content) 
+     Used for: Headings, body text, captions.
+     Why: High contrast for readability on product descriptions. */
+  --color-text-main: #0F172A; /* Slate 900 */
+  --color-text-muted: #64748B; /* Slate 500 - For "secondary" info like generic specs */
+  --color-text-inverted: #FFFFFF;
+
+  /* 🚦 Semantic Status (Feedback)
+     Used for: Stock status, Errors, Success messages. */
+  --color-success: #16A34A; /* Green - "In Stock", "Order Placed" */
+  --color-warning: #EAB308; /* Yellow - "Low Stock", "Review Stars" */
+  --color-danger: #EF4444; /* Red - "Out of Stock", "Remove from Cart" */
+  --color-info: #3B82F6; /* Blue - "New Arrival" tags */
+
+  /* 🖼️ Borders & Dividers */
+  --color-border: #E2E8F0; /* Slate 200 */
+  --color-input: #CBD5E1; /* Slate 300 - Search bars and Login inputs */
+  --color-ring: #0F172A; /* For focus states on inputs */
+
+  /* 🔠 Typography */
+  --font-heading: "Inter", system-ui, sans-serif;
+  --font-body: "Roboto", system-ui, sans-serif;
+
+  /* 📐 Layout & Shapes */
+  --radius-sm: 0.375rem;   /* For Buttons & Inputs */
+  --radius-card: 0.75rem;  /* For Product Cards */
+  --container-width: 1280px; /* Max width for large screens */
+
+  /* 💫 Animation & Depth */
+  --shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -1px rgb(0 0 0 / 0.05);
+  --shadow-hover: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.05);
+  --transition-snappy: 200ms cubic-bezier(0.4, 0, 0.2, 1); /* Quick, responsive feel */
+}
+
+@layer base{
+   body {
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-text-main);
+  line-height: 1.6;
+
+  /* Makes text crisper */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings use the display font */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-text-main);
+    letter-spacing: -0.025em; /* Tighter tracking looks premium */
+    font-weight: 700;
+  }
+}
+
+
+  /* Smooth scrolling for the whole page */
+  html {
+    scroll-behavior: smooth;
+  }
