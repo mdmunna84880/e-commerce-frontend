@@ -18,6 +18,6 @@ export const store = configureStore({
   devTools: import.meta.env.MODE !== "production"
 });
 
-
+console.dir(typeof store.dispatch);
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
